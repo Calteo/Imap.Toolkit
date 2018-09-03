@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Imap.Toolkit.Core
 {
+    /// <summary>
+    /// Some Comment
+    /// </summary>
     public class Class1
     {
     }
