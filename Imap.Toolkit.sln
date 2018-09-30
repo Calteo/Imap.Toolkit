@@ -5,6 +5,21 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Toolkit.Core", "Imap.Toolkit.Core\Imap.Toolkit.Core.csproj", "{3F131CAD-E8AC-468E-B3C4-79186A684560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Profiles", "Imap.Profiles\Imap.Profiles.csproj", "{95F9E54E-9B91-40DC-84CC-78BF7B2EDC33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{2853F33C-0344-4526-9072-C3EF50773F78}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssembyInfo.cs = SharedAssembyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.GetInfo", "Imap.GetInfo\Imap.GetInfo.csproj", "{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licences", "Licences", "{288A7B97-C4BD-4B9F-9903-24334D321263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Backup", "Imap.Backup\Imap.Backup.csproj", "{2F2225A5-F377-4208-9AEB-C71A91C140D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Restore", "Imap.Restore\Imap.Restore.csproj", "{176BFB6B-0954-4A8A-88FC-818274B05B4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +30,22 @@ Global
 		{3F131CAD-E8AC-468E-B3C4-79186A684560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F131CAD-E8AC-468E-B3C4-79186A684560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F131CAD-E8AC-468E-B3C4-79186A684560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F9E54E-9B91-40DC-84CC-78BF7B2EDC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F9E54E-9B91-40DC-84CC-78BF7B2EDC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F9E54E-9B91-40DC-84CC-78BF7B2EDC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F9E54E-9B91-40DC-84CC-78BF7B2EDC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2225A5-F377-4208-9AEB-C71A91C140D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2225A5-F377-4208-9AEB-C71A91C140D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2225A5-F377-4208-9AEB-C71A91C140D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2225A5-F377-4208-9AEB-C71A91C140D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
