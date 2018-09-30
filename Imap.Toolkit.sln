@@ -15,6 +15,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.GetInfo", "Imap.GetInfo\Imap.GetInfo.csproj", "{42B2EF7C-C02E-4CF7-8304-3338F4D57BB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licences", "Licences", "{288A7B97-C4BD-4B9F-9903-24334D321263}"
+	ProjectSection(SolutionItems) = preProject
+		third-party-licenses\commandLineParser - License.md = third-party-licenses\commandLineParser - License.md
+		third-party-licenses\MailKit - License.md = third-party-licenses\MailKit - License.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Backup", "Imap.Backup\Imap.Backup.csproj", "{2F2225A5-F377-4208-9AEB-C71A91C140D4}"
 EndProject

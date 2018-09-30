@@ -1,15 +1,12 @@
 ﻿using CommandLine;
 using Imap.Toolkit.Core;
 using MailKit;
-using MailKit.Net.Imap;
 using MailKit.Search;
 using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Imap.Restore
 {

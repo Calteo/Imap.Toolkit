@@ -5,7 +5,6 @@ using MailKit.Search;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Imap.Backup
 {
