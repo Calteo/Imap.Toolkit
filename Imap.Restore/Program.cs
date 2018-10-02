@@ -53,7 +53,8 @@ namespace Imap.Restore
                 var profileFolder = opts.SourceProfile == "" ? profile.Name : opts.SourceProfile;
                 var backupFolder = Path.Combine(opts.BackupFolder, profileFolder);
 
-                var filters = opts.MessageBoxes.Select(m => m.Split("=".ToCharArray(), 2)).ToDictionary(p => p[0], p => p.Length == 1 ? p[0] : p[1]);
+                var filters = opts.MessageBoxes.Select(m => m.Split("=".ToCharArray(), 2))
+                                .ToDictionary(p => p[0], p => p.Length == 1 ? p[0] : p[1]);
 
                 using (var client = profile.CreateClient())
                 {
@@ -69,14 +70,16 @@ namespace Imap.Restore
 
                             var folder = GetFolder(client.GetFolder(client.PersonalNamespaces[0]), new Queue<string>(targetFoldername.Split('/')));
 
-
-                            var filenames = Directory.GetFiles(directory, "*.eml");
+                            // filenames in order of message id
+                            var filenames = Directory.GetFiles(directory, "*.eml")
+                                .OrderBy(f => uint.Parse(Path.GetFileNameWithoutExtension(f))).ToArray();
 
                             folder.Open(FolderAccess.ReadWrite);
                             Console.WriteLine($"{folder.FullName} - {filenames.Length} messages");
 
                             var count = 0;
                             var added = 0;
+                            // already proceessed ids - to remove duplicate ids
                             var ids = new HashSet<string>();
 
                             foreach (var filename in filenames)
