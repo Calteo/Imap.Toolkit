@@ -25,9 +25,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Restore", "Imap.Restore\Imap.Restore.csproj", "{176BFB6B-0954-4A8A-88FC-818274B05B4F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{34660AA5-0D40-4F29-9A3C-AC808BE876CC}"
-	ProjectSection(SolutionItems) = preProject
-		.travis.yml = .travis.yml
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
