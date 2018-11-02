@@ -3,4 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartArguments>-n "goneo - Roman" -s "1&amp;1 - Roman" -b D:\Public\Documents\EMail-Backup -m Trash=INBOX.Trash -c -p 1</StartArguments>
   </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
 </Project>
