@@ -17,3 +17,4 @@ D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Release\Imap.
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Release\Imap.Toolkit.Core.csproj.CopyComplete
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Release\Imap.Toolkit.Core.dll
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Release\Imap.Toolkit.Core.pdb
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Release\Imap.Toolkit.Core.csprojAssemblyReference.cache

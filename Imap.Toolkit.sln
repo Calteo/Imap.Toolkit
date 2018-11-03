@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{34660AA5-0D40-
 		CreateArtifacts.ps1 = CreateArtifacts.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imap.Explorer", "Imap.Explorer\Imap.Explorer.csproj", "{2A47414B-1AB7-4212-B22A-B48B2E909B17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176BFB6B-0954-4A8A-88FC-818274B05B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A47414B-1AB7-4212-B22A-B48B2E909B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A47414B-1AB7-4212-B22A-B48B2E909B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A47414B-1AB7-4212-B22A-B48B2E909B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A47414B-1AB7-4212-B22A-B48B2E909B17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

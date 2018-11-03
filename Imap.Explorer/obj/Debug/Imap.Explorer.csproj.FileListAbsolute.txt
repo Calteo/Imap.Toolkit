@@ -1,0 +1,10 @@
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\Imap.Explorer.exe.config
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\Imap.Explorer.exe
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\Imap.Explorer.pdb
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.csprojAssemblyReference.cache
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.MainForm.resources
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.Properties.Resources.resources
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.csproj.GenerateResource.cache
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.csproj.CoreCompileInputs.cache
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.exe
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.pdb

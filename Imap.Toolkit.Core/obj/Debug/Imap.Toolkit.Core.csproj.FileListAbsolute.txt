@@ -17,3 +17,4 @@ D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\bin\Debug\MailKit
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\bin\Debug\MimeKit.dll
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\bin\Debug\MailKit.xml
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\bin\Debug\MimeKit.xml
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Toolkit.Core\obj\Debug\Imap.Toolkit.Core.csprojAssemblyReference.cache
