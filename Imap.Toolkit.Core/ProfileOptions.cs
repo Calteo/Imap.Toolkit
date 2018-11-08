@@ -8,6 +8,12 @@ namespace Imap.Toolkit.Core
         private string _userName;
         private string _name;
 
+        public ProfileOptions()
+        {
+            Name = "*";
+            UserName = "*";
+        }
+
         [Option('n', "name", HelpText = "name or pattern for names", Default = "*")]
         public string Name
         {

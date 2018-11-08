@@ -21,7 +21,10 @@ namespace Imap.Toolkit.Core
         public string HostName { get; set; }
 
         [DataMember]
-        public int Port { get; set; }
+        public int Port { get; set; } = DefaultPort;
+
+        public const int DefaultPort = 143;
+        public const int DefaultPortSll = 993;
 
         [DataMember]
         public bool Ssl { get; set; }

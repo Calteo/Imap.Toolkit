@@ -67,9 +67,9 @@ namespace Imap.Profiles
             if (opts.Port.HasValue)
                 profile.Port = opts.Port.Value;
             else if (profile.Ssl)
-                profile.Port = 993;
+                profile.Port = Profile.DefaultPortSll;
             else
-                profile.Port = 143;
+                profile.Port = Profile.DefaultPortSll;
 
             using (var client = profile.CreateClient())
             {

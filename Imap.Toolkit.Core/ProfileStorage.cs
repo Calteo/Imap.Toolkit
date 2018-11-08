@@ -43,8 +43,12 @@ namespace Imap.Toolkit.Core
                 .Select(Path.GetFileNameWithoutExtension).ToArray();
         }
 
-        public Profile[] GetProfiles(ProfileOptions options)
+        public Profile[] GetProfiles(ProfileOptions options = null)
         {
+            if (options == null)
+            {
+                options = new ProfileOptions();
+            }
             return GetNames().Where(n => options.NamePattern.IsMatch(n))
                 .Select(n => Retrieve(n))
                 .Where(p => options.UserNamePattern.IsMatch(p.UserName))
