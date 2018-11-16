@@ -1,6 +1,6 @@
 ﻿namespace Imap.Explorer
 {
-    partial class ProfileForm
+    partial class PostBoxForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,9 @@
             this.labelUserName = new System.Windows.Forms.Label();
             this.checkBoxSll = new System.Windows.Forms.CheckBox();
             this.numericUpDownPort = new System.Windows.Forms.NumericUpDown();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.buttonTest = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -79,7 +79,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(541, 351);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(478, 259);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // textBoxHostName
@@ -89,7 +89,7 @@
             this.textBoxHostName.Location = new System.Drawing.Point(123, 105);
             this.textBoxHostName.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.textBoxHostName.Name = "textBoxHostName";
-            this.textBoxHostName.Size = new System.Drawing.Size(388, 20);
+            this.textBoxHostName.Size = new System.Drawing.Size(325, 20);
             this.textBoxHostName.TabIndex = 7;
             this.textBoxHostName.TextChanged += new System.EventHandler(this.textBoxHostName_TextChanged);
             // 
@@ -100,7 +100,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(123, 71);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(268, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(205, 20);
             this.textBoxPassword.TabIndex = 6;
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
@@ -110,19 +110,19 @@
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonOk.Enabled = false;
-            this.buttonOk.Location = new System.Drawing.Point(304, 320);
+            this.buttonOk.Location = new System.Drawing.Point(241, 228);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(114, 28);
             this.buttonOk.TabIndex = 0;
             this.buttonOk.Text = "&Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            this.buttonOk.Click += new System.EventHandler(this.ButtonOkClick);
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCancel.Location = new System.Drawing.Point(424, 320);
+            this.buttonCancel.Location = new System.Drawing.Point(361, 228);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(114, 28);
             this.buttonCancel.TabIndex = 1;
@@ -136,7 +136,7 @@
             this.textBoxName.Location = new System.Drawing.Point(123, 3);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(388, 20);
+            this.textBoxName.Size = new System.Drawing.Size(325, 20);
             this.textBoxName.TabIndex = 2;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
@@ -147,7 +147,7 @@
             this.textBoxUserName.Location = new System.Drawing.Point(123, 37);
             this.textBoxUserName.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(388, 20);
+            this.textBoxUserName.Size = new System.Drawing.Size(325, 20);
             this.textBoxUserName.TabIndex = 3;
             this.textBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
             // 
@@ -175,7 +175,7 @@
             this.checkBoxSll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxSll.Location = new System.Drawing.Point(123, 173);
             this.checkBoxSll.Name = "checkBoxSll";
-            this.checkBoxSll.Size = new System.Drawing.Size(175, 28);
+            this.checkBoxSll.Size = new System.Drawing.Size(112, 28);
             this.checkBoxSll.TabIndex = 8;
             this.checkBoxSll.Text = "Use SSL";
             this.checkBoxSll.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             0,
             0});
             this.numericUpDownPort.Name = "numericUpDownPort";
-            this.numericUpDownPort.Size = new System.Drawing.Size(175, 20);
+            this.numericUpDownPort.Size = new System.Drawing.Size(112, 20);
             this.numericUpDownPort.TabIndex = 9;
             this.numericUpDownPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDownPort.Value = new decimal(new int[] {
@@ -205,14 +205,10 @@
             0,
             0});
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // checkBoxShowPassword
             // 
             this.checkBoxShowPassword.AutoSize = true;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(424, 71);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(361, 71);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(53, 17);
             this.checkBoxShowPassword.TabIndex = 10;
@@ -223,13 +219,17 @@
             // buttonTest
             // 
             this.buttonTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonTest.Location = new System.Drawing.Point(3, 320);
+            this.buttonTest.Location = new System.Drawing.Point(3, 228);
             this.buttonTest.Name = "buttonTest";
             this.buttonTest.Size = new System.Drawing.Size(114, 28);
             this.buttonTest.TabIndex = 11;
             this.buttonTest.Text = "&Test";
             this.buttonTest.UseVisualStyleBackColor = true;
-            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
+            this.buttonTest.Click += new System.EventHandler(this.ButtonTestClick);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // ProfileForm
             // 
@@ -237,11 +237,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(541, 351);
+            this.ClientSize = new System.Drawing.Size(478, 259);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "ProfileForm";
             this.Text = "Profile";
-            this.Load += new System.EventHandler(this.ProfileForm_Load);
+            this.Load += new System.EventHandler(this.PostBoxForm_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit();

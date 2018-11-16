@@ -11,32 +11,35 @@ using System.Windows.Forms;
 
 namespace Imap.Explorer
 {
-    internal partial class ProfileForm : Form
+    internal partial class PostBoxForm : Form
     {
-        public ProfileForm()
+        public PostBoxForm()
         {
             InitializeComponent();
         }
 
-        public Profile Profile { get; set; }
+        public PostBox PostBox { get; set; }
+        public ProfileStorage Storage { get; set; }
 
-        private void ProfileForm_Load(object sender, EventArgs e)
+        private void PostBoxForm_Load(object sender, EventArgs e)
         {
-            textBoxName.Text = Profile.Name;
+            var profile = PostBox.Profile;
+
+            textBoxName.Text = profile.Name;
             textBoxName_TextChanged(textBoxName, EventArgs.Empty);
 
-            textBoxUserName.Text = Profile.UserName;
+            textBoxUserName.Text = profile.UserName;
             textBoxUserName_TextChanged(textBoxUserName, EventArgs.Empty);
 
-            textBoxPassword.Text = Profile.Password;
+            textBoxPassword.Text = profile.Password;
             textBoxPassword_TextChanged(textBoxPassword, EventArgs.Empty);
 
-            textBoxHostName.Text = Profile.HostName;
+            textBoxHostName.Text = profile.HostName;
             textBoxHostName_TextChanged(textBoxHostName, EventArgs.Empty);
 
-            numericUpDownPort.Value = Profile.Port;
+            numericUpDownPort.Value = profile.Port;
 
-            checkBoxSll.Checked = Profile.Ssl;
+            checkBoxSll.Checked = profile.Ssl;
         }
 
         public HashSet<Control> ErrorControls { get; } = new HashSet<Control>();
@@ -112,7 +115,7 @@ namespace Imap.Explorer
             textBoxPassword.UseSystemPasswordChar = !checkBoxShowPassword.Checked;
         }
 
-        private void buttonTest_Click(object sender, EventArgs e)
+        private void ButtonTestClick(object sender, EventArgs e)
         {
             try
             {
@@ -143,14 +146,23 @@ namespace Imap.Explorer
             }
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void ButtonOkClick(object sender, EventArgs e)
         {
-            Profile.Name = textBoxName.Text;
-            Profile.UserName = textBoxUserName.Text;
-            Profile.HostName = textBoxHostName.Text;
-            Profile.Password = textBoxPassword.Text;
-            Profile.Port = (int)numericUpDownPort.Value;
-            Profile.Ssl = checkBoxSll.Checked;
+            var profile = PostBox.Profile;
+
+            if (profile.Name!="" && profile.Name!=textBoxName.Text)
+                Storage.Remove(profile.Name);
+
+            profile.Name = textBoxName.Text;
+            profile.UserName = textBoxUserName.Text;
+            profile.HostName = textBoxHostName.Text;
+            profile.Password = textBoxPassword.Text;
+            profile.Port = (int)numericUpDownPort.Value;
+            profile.Ssl = checkBoxSll.Checked;
+
+            Storage.Store(profile);
+
+            PostBox.ImapClient = null;
         }
     }
 }

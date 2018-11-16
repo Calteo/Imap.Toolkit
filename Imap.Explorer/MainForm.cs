@@ -1,36 +1,62 @@
 ﻿using Imap.Toolkit.Core;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Imap.Explorer
 {
     internal partial class MainForm : Form
     {
-        private Profile _profile;
-
+        private PostBox _postBox;
+        
         public MainForm()
         {
             InitializeComponent();
+
+            toolStripComboBoxProfiles.ComboBox.DataSource = null;
+            toolStripComboBoxProfiles.ComboBox.DisplayMember = "Text";
+            toolStripComboBoxProfiles.ComboBox.DataSource = Postboxes;
+            
+            treeListView.CanExpandGetter = o => ((Folder)o).CanExpand;
+            treeListView.ChildrenGetter = o => ((Folder)o).ChildFolders;
         }
 
         public ProfileStorage Storage { get; set; }
 
-        public List<Profile> Profiles { get; } = new List<Profile>();
+        public BindingList<PostBox> Postboxes { get; } = new BindingList<PostBox>();
 
-        public Profile Profile
+
+        public PostBox PostBox
         {
-            get => _profile;
+            get => _postBox;
             set
             {
-                _profile = value;
-                toolStripButtonDelete.Enabled = toolStripButtonEdit.Enabled = _profile != null;
+                _postBox = value;
+                toolStripButtonDelete.Enabled = toolStripButtonEdit.Enabled = _postBox != null;
+                OnPostBoxChanged();
+            }
+        }
+
+        private void OnPostBoxChanged()
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                treeListView.Roots = null;
+                if (PostBox != null)
+                {
+                    treeListView.Roots = PostBox.Folders;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
@@ -38,49 +64,43 @@ namespace Imap.Explorer
         {
             Storage = new ProfileStorage();
 
-            Profiles.AddRange(Storage.GetProfiles().ToArray());
+            Storage.GetProfiles().ToList().ForEach(p => Postboxes.Add(new PostBox(p)));
 
-            toolStripComboBoxProfiles.Items.AddRange(Profiles.Select(p => GetText(p)).ToArray());
-        }
-
-        private string GetText(Profile p)
-        {
-            return $"{p.Name} ({p.UserName})";
+            toolStripComboBoxProfiles.SelectedIndex = -1;
         }
 
         private void toolStripComboBoxProfiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (toolStripComboBoxProfiles.SelectedIndex >= 0)
-                Profile = Profiles.First(p => GetText(p) == (string)toolStripComboBoxProfiles.SelectedItem);
+                PostBox = (PostBox)toolStripComboBoxProfiles.SelectedItem;
             else
-                Profile = null;
+                PostBox = null;
         }
 
-        private void toolStripButtonEdit_Click(object sender, EventArgs e)
+        private void ToolStripButtonEditClick(object sender, EventArgs e)
         {
-            var oldName = Profile.Name;
-            var form = new ProfileForm { Profile = Profile };
+            var form = new PostBoxForm { Storage = Storage, PostBox = PostBox };
             if (form.ShowDialog(this) == DialogResult.OK)
             {
-                Storage.Store(Profile);
-                if (oldName != Profile.Name)
-                {
-                    Storage.Remove(oldName);
-                    var index = toolStripComboBoxProfiles.SelectedIndex;
-                    var text = GetText(Profile);
-                    toolStripComboBoxProfiles.Items.RemoveAt(index);
-                    toolStripComboBoxProfiles.Items.Add(GetText(Profile));
-                    toolStripComboBoxProfiles.SelectedItem = text;
-                }
+                OnPostBoxChanged();
             }
         }
 
-        private void toolStripButtonNew_Click(object sender, EventArgs e)
+        private void ToolStripButtonNewClick(object sender, EventArgs e)
         {
-            var form = new ProfileForm { Profile = new Profile() };
+            var form = new PostBoxForm { Storage = Storage, PostBox = new PostBox(new Profile()) };
             if (form.ShowDialog(this) == DialogResult.OK)
             {
+                Postboxes.Add(form.PostBox);
             }
+        }
+
+        private void treeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            objectListViewMessages.Objects = null;
+
+            var folder = (Folder)treeListView.SelectedObject;
+            objectListViewMessages.Objects = folder.GetMessages();
         }
     }
 }

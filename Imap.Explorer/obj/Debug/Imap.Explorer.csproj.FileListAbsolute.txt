@@ -17,4 +17,6 @@ D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\MailKit.xml
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\CommandLine.xml
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\MimeKit.xml
 D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.csproj.CopyComplete
-D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.ProfileForm.resources
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\ObjectListView.dll
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\bin\Debug\ObjectListView.xml
+D:\Projekte\GitHub\Imap.Toolkit\Imap.Toolkit\Imap.Explorer\obj\Debug\Imap.Explorer.PostBoxForm.resources
