@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Imap.Toolkit.Core;
 using MailKit.Net.Imap;
 
 namespace Imap.Explorer
 {
-    class PostBox
+    class PostBox : INotifyPropertyChanged
     {
         public PostBox(Profile profile)
         {
@@ -16,9 +17,21 @@ namespace Imap.Explorer
         public Profile Profile { get; set; }
 
         public string Text => $"{Profile.Name} ({Profile.HostName})";
+        public void OnTextChanged()
+        {
+            OnPropertyChanged(nameof(Text));
+        }
 
         private ImapClient _imapClient;
         private List<Folder> _folders;
+
+        #region
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
 
         public ImapClient ImapClient
         {

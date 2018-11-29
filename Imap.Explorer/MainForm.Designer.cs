@@ -41,6 +41,8 @@
             this.olvColumnMsg = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.objectListViewMessages = new BrightIdeasSoftware.FastObjectListView();
             this.olvColumnMessageSubject = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnFrom = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.toolStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,7 +77,6 @@
             this.toolStripComboBoxProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBoxProfiles.Name = "toolStripComboBoxProfiles";
             this.toolStripComboBoxProfiles.Size = new System.Drawing.Size(250, 25);
-            this.toolStripComboBoxProfiles.Sorted = true;
             this.toolStripComboBoxProfiles.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxProfiles_SelectedIndexChanged);
             // 
             // toolStripButtonNew
@@ -133,6 +134,7 @@
             this.olvColumnMsg});
             this.treeListView.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListView.FullRowSelect = true;
             this.treeListView.Location = new System.Drawing.Point(0, 0);
             this.treeListView.Name = "treeListView";
             this.treeListView.ShowGroups = false;
@@ -160,11 +162,18 @@
             // 
             // objectListViewMessages
             // 
+            this.objectListViewMessages.AllColumns.Add(this.olvColumnDate);
+            this.objectListViewMessages.AllColumns.Add(this.olvColumnFrom);
             this.objectListViewMessages.AllColumns.Add(this.olvColumnMessageSubject);
             this.objectListViewMessages.CellEditUseWholeCell = false;
             this.objectListViewMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnDate,
+            this.olvColumnFrom,
             this.olvColumnMessageSubject});
+            this.objectListViewMessages.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListViewMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewMessages.FullRowSelect = true;
+            this.objectListViewMessages.GridLines = true;
             this.objectListViewMessages.Location = new System.Drawing.Point(0, 0);
             this.objectListViewMessages.Name = "objectListViewMessages";
             this.objectListViewMessages.ShowGroups = false;
@@ -177,6 +186,20 @@
             // olvColumnMessageSubject
             // 
             this.olvColumnMessageSubject.AspectName = "Subject";
+            this.olvColumnMessageSubject.Text = "Subject";
+            this.olvColumnMessageSubject.Width = 250;
+            // 
+            // olvColumnFrom
+            // 
+            this.olvColumnFrom.AspectName = "From";
+            this.olvColumnFrom.Text = "From";
+            this.olvColumnFrom.Width = 197;
+            // 
+            // olvColumnDate
+            // 
+            this.olvColumnDate.AspectName = "Date";
+            this.olvColumnDate.Text = "Date";
+            this.olvColumnDate.Width = 132;
             // 
             // MainForm
             // 
@@ -215,6 +238,8 @@
         private BrightIdeasSoftware.OLVColumn olvColumnMsg;
         private BrightIdeasSoftware.FastObjectListView objectListViewMessages;
         private BrightIdeasSoftware.OLVColumn olvColumnMessageSubject;
+        private BrightIdeasSoftware.OLVColumn olvColumnFrom;
+        private BrightIdeasSoftware.OLVColumn olvColumnDate;
     }
 }
 

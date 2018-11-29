@@ -154,6 +154,8 @@ namespace Imap.Explorer
                 Storage.Remove(profile.Name);
 
             profile.Name = textBoxName.Text;
+            PostBox.OnTextChanged();
+
             profile.UserName = textBoxUserName.Text;
             profile.HostName = textBoxHostName.Text;
             profile.Password = textBoxPassword.Text;
@@ -163,6 +165,7 @@ namespace Imap.Explorer
             Storage.Store(profile);
 
             PostBox.ImapClient = null;
+            
         }
     }
 }

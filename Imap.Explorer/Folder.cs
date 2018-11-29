@@ -37,10 +37,13 @@ namespace Imap.Explorer
             }
         }
 
-        internal IEnumerable GetMessages()
+        internal IEnumerable<Message> GetMessages()
         {
-            // var hl = _imapFolder.Search(SearchQuery.All).Select(u => _imapFolder.GetHeaders(u));
-            return null;
+            _imapFolder.Open(FolderAccess.ReadOnly);
+            var messages = _imapFolder.Search(SearchQuery.All).Select(u => new Message(u, _imapFolder.GetHeaders(u))).ToArray();
+                
+            _imapFolder.Close();
+            return messages;
         }
     }
 }

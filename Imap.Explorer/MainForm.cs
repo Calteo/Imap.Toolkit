@@ -26,7 +26,6 @@ namespace Imap.Explorer
 
         public BindingList<PostBox> Postboxes { get; } = new BindingList<PostBox>();
 
-
         public PostBox PostBox
         {
             get => _postBox;
@@ -60,6 +59,23 @@ namespace Imap.Explorer
             }
         }
 
+        private void SafeExecute(Action action)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+                action();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Storage = new ProfileStorage();
@@ -82,8 +98,12 @@ namespace Imap.Explorer
             var form = new PostBoxForm { Storage = Storage, PostBox = PostBox };
             if (form.ShowDialog(this) == DialogResult.OK)
             {
-                OnPostBoxChanged();
+                var ordered = Postboxes.OrderBy(p => p.Text).ToList();
+                Postboxes.Clear();
+                ordered.ForEach(Postboxes.Add);                                // to reinforce the sorting                                
+                
             }
+            toolStripComboBoxProfiles.SelectedItem = PostBox;
         }
 
         private void ToolStripButtonNewClick(object sender, EventArgs e)
@@ -97,10 +117,12 @@ namespace Imap.Explorer
 
         private void treeListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            objectListViewMessages.Objects = null;
-
-            var folder = (Folder)treeListView.SelectedObject;
-            objectListViewMessages.Objects = folder.GetMessages();
+            SafeExecute(() => 
+            { 
+                objectListViewMessages.Objects = null;
+                var folder = (Folder)treeListView.SelectedObject;            
+                objectListViewMessages.Objects = folder?.GetMessages();
+            });
         }
     }
 }
